@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".PermissionActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/top" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:text="Permissions required for optimal app functionality. Grant overlay and accessibility service permissions." />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="Grant overlay permission to enable\nseamless interaction with our app's features."
+        android:textSize="16sp"
+        app:thumbTint="@color/red" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/accessibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/bg"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="Grant accessibility service permission\nto enhance app accessibility and functionality."
+        android:textSize="16sp"
+        app:thumbTint="@color/red" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Next"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        app:cornerRadius="26dp" />
+
+</LinearLayout>
