@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
     <color name="blue">#7FE3CB</color>
+    <color name="blue_trans">#A8BB6362</color>
     <color name="red">#BB6362</color>
     <color name="trans">#007FE3CB</color>
 </resources>

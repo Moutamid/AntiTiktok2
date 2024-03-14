@@ -10,8 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
@@ -22,10 +22,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:textColor="@color/black"
             android:layout_marginTop="5dp"
-            android:text="@string/rise_of_technology" />
+            android:paddingHorizontal="20dp"
+            android:text="@string/rise_of_technology"
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,19 +37,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
                 app:cardBackgroundColor="@color/blue"
-                app:cardElevation="5dp"
-                android:layout_margin="12dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:textSize="22dp"
                     android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:text="Scroll\nDistance\nTracker 📲🕑"
                     android:textColor="@color/black"
-                    android:text="Scroll\nDistance\nTracker 📲🕑" />
+                    android:textSize="22dp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -63,30 +63,42 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
+                    android:text="After 30 swipes, it shows you the distance covered on the screen."
                     android:textColor="@color/black"
-                    android:text="After 30 swipes, it shows you the distance covered on the screen." />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
                     android:layout_marginVertical="10dp"
-                    android:textStyle="italic"
-                    android:text="You can watch it as you scroll your time away, or you choose to return to your life." />
+                    android:text="You can watch it as you scroll your time away, or you choose to return to your life."
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
+                    android:text="Active on Tiktok."
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="Active on Tiktok." />
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/counter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/bg"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"
+            android:layout_marginHorizontal="12dp"
+            android:text="Enable Scroll Distance Tracker ?" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,19 +110,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
                 app:cardBackgroundColor="@color/blue"
-                app:cardElevation="5dp"
-                android:layout_margin="12dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:textSize="22dp"
                     android:gravity="center"
+                    android:padding="15dp"
+                    android:text="Doomscrolling\n📜💥"
                     android:textColor="@color/black"
-                    android:text="Doomscrolling\n📜💥" />
+                    android:textSize="22dp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -124,26 +136,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
+                    android:text="After 50 swipes, Doomscrolling counter measures are active."
                     android:textColor="@color/black"
-                    android:text="After 50 swipes, Doomscrolling counter measures are active." />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:textStyle="italic"
                     android:layout_marginVertical="10dp"
-                    android:text="Extended period of empty scrolling will be harder." />
+                    android:text="Extended period of empty scrolling will be harder."
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
+                    android:text="Active on Tiktok"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="Active on Tiktok" />
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -159,19 +171,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
                 app:cardBackgroundColor="@color/blue"
-                app:cardElevation="5dp"
-                android:layout_margin="12dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:textSize="22dp"
                     android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:text="Sensory\nFlooding, SFCs\n😵"
                     android:textColor="@color/black"
-                    android:text="Sensory\nFlooding, SFCs\n😵" />
+                    android:textSize="22dp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -185,30 +197,42 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18dp"
+                    android:text="No content starts auto-playing while warching shorts."
                     android:textColor="@color/black"
-                    android:text="No content starts auto-playing while warching shorts." />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
                     android:layout_marginVertical="10dp"
-                    android:textStyle="italic"
-                    android:text="@string/pause_content" />
+                    android:text="@string/pause_content"
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12dp"
+                    android:text="Active on Tiktok"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="Active on Tiktok" />
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sensory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/bg"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"
+            android:layout_marginHorizontal="12dp"
+            android:text="Disable Auto-playing" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -222,18 +246,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:textColor="@color/black"
                 android:layout_weight="1"
-                android:text="Website:\nsites.google.com/view/lensappbeta" />
+                android:text="Website:\nsites.google.com/view/lensappbeta"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:textColor="@color/black"
                 android:gravity="end"
-                android:text="v1.0" />
+                android:text="v1.0"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -242,8 +266,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:textColor="@color/black"
-            android:text="@string/privacy_policy" />
+            android:text="@string/privacy_policy"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

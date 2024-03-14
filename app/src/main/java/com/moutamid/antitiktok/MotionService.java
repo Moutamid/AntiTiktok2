@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
+import com.fxn.stash.Stash;
+
 public class MotionService extends AccessibilityService {
     private boolean canScroll = true;
     private boolean tikTokInForeground = false;
@@ -50,23 +52,26 @@ public class MotionService extends AccessibilityService {
                 startService();
             }
             continueBool = false;
-            clickWindow();
+            if (Stash.getBoolean("sensory", true)){
+                clickWindow();
+            }
             new Handler().postDelayed(() -> continueBool = true, 1000);
 
-            new Handler().postDelayed(() -> {
-                if (Window.counter != null) {
-                    counter++;
-                    String[] s = Window.counter.getText().toString().split(" - ");
-                    int i = Integer.parseInt(s[0]);
-                    if (counter < 30) {
-                        Window.counter.setVisibility(View.GONE);
-                    } else {
-                        Window.counter.setVisibility(View.VISIBLE);
-                        int count = i + 1;
-                        int cen = (count * 3);
-                        Window.counter.setText(count + " - " + cen + " centimeter");
+            if (Stash.getBoolean("counter", true)){
+                new Handler().postDelayed(() -> {
+                    if (Window.counter != null) {
+                        counter++;
+                        String[] s = Window.counter.getText().toString().split(" - ");
+                        int i = Integer.parseInt(s[0]);
+                        if (counter < 30) {
+                            Window.counter.setVisibility(View.GONE);
+                        } else {
+                            Window.counter.setVisibility(View.VISIBLE);
+                            int count = i + 1;
+                            int cen = (count * 3);
+                            Window.counter.setText(count + " - " + cen + " centimeter");
+                        }
                     }
-                }
 /*
                 Window.canva.setOnTouchListener((v, e) -> {
                     if (e.getAction() == MotionEvent.ACTION_DOWN) {
@@ -159,8 +164,8 @@ public class MotionService extends AccessibilityService {
                         Window.bottomNavView.setVisibility(View.VISIBLE);
                     }, 2000);
                 });*/
-            }, 1000);
-
+                }, 1000);
+            }
         } else {
 //            if (serviceIntent != null && ForegroundService.window != null && Window.counterView.getWindowToken() != null) {
 //                ForegroundService.window.close();

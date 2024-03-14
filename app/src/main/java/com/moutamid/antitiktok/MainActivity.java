@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import com.fxn.stash.Stash;
 import com.google.android.material.button.MaterialButton;
 import com.moutamid.antitiktok.databinding.ActivityMainBinding;
 
@@ -38,13 +39,20 @@ public class MainActivity extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-//        findViewById(R.id.layout).setOnClickListener(v -> {
-//            if (!Constants.isAccessibilityServiceEnabled(this, getPackageName() + "/.MotionService")){
-//                Constants.openAccessibilitySettings(this);
-//            }
-////            startService();
-//        });
-        
+
+        binding.sensory.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Stash.put("sensory", isChecked);
+        });
+        binding.counter.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Stash.put("counter", isChecked);
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        binding.counter.setChecked(Stash.getBoolean("counter", true));
+        binding.sensory.setChecked(Stash.getBoolean("sensory", true));
     }
 
     private void openURL(String url) {
