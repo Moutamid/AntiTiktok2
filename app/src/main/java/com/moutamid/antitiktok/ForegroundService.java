@@ -55,7 +55,7 @@ public class ForegroundService extends Service {
 
                 // this is important, otherwise the notification will show the way
                 // you want i.e. it will show some default notification
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.mipmap.ic_launcher_foreground)
 
                 .setPriority(NotificationManager.IMPORTANCE_MIN)
                 .setCategory(Notification.CATEGORY_SERVICE)
@@ -72,6 +72,7 @@ public class ForegroundService extends Service {
     public void onDestroy() {
         super.onDestroy();
         stopForeground(true);
+        window.close();
     }
 
 }

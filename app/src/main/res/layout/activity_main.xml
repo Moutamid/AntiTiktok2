@@ -16,8 +16,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/top" />
+            android:layout_marginHorizontal="12dp"
+            android:src="@drawable/lens" />
 
         <TextView
             android:layout_width="match_parent"
@@ -197,7 +197,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No content starts auto-playing while warching shorts."
+                    android:text="@string/no_content"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 

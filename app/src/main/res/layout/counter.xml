@@ -11,6 +11,6 @@
         android:textSize="26sp"
         android:layout_marginTop="15dp"
         android:textColor="#ff0000"
-        android:text="30 - 3 centimeter" />
+        android:text="0.02 m" />
 
 </RelativeLayout>

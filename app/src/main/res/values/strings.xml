@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">LENS</string>
     <string name="rise_of_technology">The rise of technology has amplified <font color="#BB6362">digital distractions</font>. We are on a mission to decrease social media overuse. We need solid <font color="#BB6362">digital</font> permissions to allow the app to simply nudge you out the <font color="#BB6362">deep digital rabbit hole</font>.</string>
-    <string name="pause_content">Pause content at 1 second to let you choose, if you want to consume or not. It allows you to access the limitless \"entertainment\" available to you</string>
+    <string name="pause_content">Pause content at 1 second giving time to choose if you want to watch or not. It bestows you with the ability to assess the limitless \"entertainment\" available to you.</string>
     <string name="privacy_policy">Privacy Policy URL:\n<u>sites.google.com/view/lensappbeta/privacy-policy</u></string>
+    <string name="no_content">No content starts auto-playing while <u>watching</u> shorts.</string>
 </resources>

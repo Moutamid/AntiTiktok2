@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -19,6 +19,8 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 
 import com.fxn.stash.Stash;
+
+import java.util.Locale;
 
 public class MotionService extends AccessibilityService {
     private boolean canScroll = true;
@@ -38,7 +40,7 @@ public class MotionService extends AccessibilityService {
     boolean homeScroll = true;
     boolean isClicked = false;
     int distance, lastDistance = 0;
-    int counter = 0;
+    int counter = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -52,25 +54,26 @@ public class MotionService extends AccessibilityService {
                 startService();
             }
             continueBool = false;
-            if (Stash.getBoolean("sensory", true)){
+            if (Stash.getBoolean("sensory", true)) {
                 clickWindow();
             }
             new Handler().postDelayed(() -> continueBool = true, 1000);
 
-            if (Stash.getBoolean("counter", true)){
+            if (Stash.getBoolean("counter", true)) {
                 new Handler().postDelayed(() -> {
                     if (Window.counter != null) {
-                        counter++;
-                        String[] s = Window.counter.getText().toString().split(" - ");
-                        int i = Integer.parseInt(s[0]);
-                        if (counter < 30) {
+                        ++counter;
+                        //String[] s = Window.counter.getText().toString().split(" - ");
+                        int i = 1;
+                        if (counter < 5) {
                             Window.counter.setVisibility(View.GONE);
                         } else {
                             Window.counter.setVisibility(View.VISIBLE);
-                            int count = i + 1;
-                            int cen = (count * 3);
-                            Window.counter.setText(count + " - " + cen + " centimeter");
                         }
+                        int count = counter + 1;
+                        float cen = count * 0.02f;
+                        String c = String.format(Locale.getDefault(), "%.2f", cen) + " m";
+                        Window.counter.setText(c);
                     }
 /*
                 Window.canva.setOnTouchListener((v, e) -> {
@@ -166,13 +169,19 @@ public class MotionService extends AccessibilityService {
                 });*/
                 }, 1000);
             }
-        } else {
-//            if (serviceIntent != null && ForegroundService.window != null && Window.counterView.getWindowToken() != null) {
-//                ForegroundService.window.close();
-//            }
+        } else if (!String.valueOf(event.getPackageName()).equals(TIKTOK)) {
+            Log.d("CHECKING123", "onAccessibilityEvent: close " + event.getEventType());
+            if (serviceIntent != null) {
+                stopService(serviceIntent);
+            }
         }
     }
-
+    private boolean isAppForeground(AccessibilityEvent event) {
+        // Check if the event indicates that the TikTok app is in the foreground
+        boolean b = event.getClassName() != null && event.getClassName().equals("com.zhiliaoapp.musically.activity.main.MainActivity");
+        Log.d(TAG, "isAppForeground: " + b);
+        return b;
+    }
     Intent serviceIntent;
 
     public void startService() {
@@ -265,6 +274,6 @@ public class MotionService extends AccessibilityService {
 
     @Override
     public void onInterrupt() {
-
+        
     }
 }

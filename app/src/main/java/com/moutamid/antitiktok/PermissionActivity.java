@@ -18,7 +18,8 @@ public class PermissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPermissionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        binding.next.setEnabled(false);
+        
         if (Stash.getBoolean("perm", false) && Constants.isAccessibilityServiceEnabled(this, getPackageName() + "/.MotionService")){
             startActivity(new Intent(this, MainActivity.class));
             finish();
