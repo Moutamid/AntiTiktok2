@@ -55,7 +55,7 @@ public class MotionService extends AccessibilityService {
             }
             continueBool = false;
             if (Stash.getBoolean("sensory", true)) {
-                clickWindow();
+                new Handler().postDelayed(() -> clickWindow(), 1500);
             }
             new Handler().postDelayed(() -> continueBool = true, 1000);
 
