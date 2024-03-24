@@ -20,6 +20,7 @@ import androidx.annotation.RequiresApi;
 
 import com.fxn.stash.Stash;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class MotionService extends AccessibilityService {
@@ -34,7 +35,7 @@ public class MotionService extends AccessibilityService {
         super.onServiceConnected();
         Toast.makeText(getApplicationContext(), "Connected!", Toast.LENGTH_SHORT).show();
     }
-
+    float cen = 0.016f;
     int[] location = new int[2];
     boolean continueBool = true;
     boolean homeScroll = true;
@@ -65,14 +66,17 @@ public class MotionService extends AccessibilityService {
                         ++counter;
                         //String[] s = Window.counter.getText().toString().split(" - ");
                         int i = 1;
-                        if (counter < 5) {
-                            Window.counter.setVisibility(View.GONE);
-                        } else {
-                            Window.counter.setVisibility(View.VISIBLE);
-                        }
-                        int count = counter + 1;
-                        float cen = count * 0.02f;
-                        String c = String.format(Locale.getDefault(), "%.2f", cen) + " m";
+                        Window.counter.setVisibility(View.VISIBLE);
+//                        if (counter < 5) {
+//                            Window.counter.setVisibility(View.GONE);
+//                        } else {
+//                            Window.counter.setVisibility(View.VISIBLE);
+//                        }
+//                        int count = counter + 1;
+                        cen = cen + 0.016f;
+                        Log.d(TAG, "onAccessibilityEvent: " + cen);
+                        DecimalFormat df = new DecimalFormat("#.##");
+                        String c = df.format(cen) + " m";
                         Window.counter.setText(c);
                     }
 /*
@@ -170,8 +174,8 @@ public class MotionService extends AccessibilityService {
                 }, 1000);
             }
         } else if (!String.valueOf(event.getPackageName()).equals(TIKTOK)) {
-            Log.d("CHECKING123", "onAccessibilityEvent: close " + event.getEventType());
             if (serviceIntent != null) {
+                cen = 0.016f;
                 stopService(serviceIntent);
             }
         }
