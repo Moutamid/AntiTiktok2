@@ -4,4 +4,6 @@
     <string name="pause_content">Pause content at 1 second giving time to choose if you want to watch or not. It bestows you with the ability to assess the limitless \"entertainment\" available to you.</string>
     <string name="privacy_policy">Privacy Policy URL:\n<u>sites.google.com/view/lensappbeta/privacy-policy</u></string>
     <string name="no_content">No content starts auto-playing while <u>watching</u> shorts.</string>
+    <string name="acccessibility">Grant accessibility service permission\nto enhance app accessibility and functionality.</string>
+    <string name="acccessibility2">To enhance your experience while using <b><b>TikTok</b></b>, we request accessibility permission. This permission is solely utilized within the <b>TikTok</b> app, enabling features such as pausing videos when you scroll and tracking scroll counts. <u>Your privacy and security are our top priorities</u>, and this permission is only active during <b>TikTok</b> usage.</string>
 </resources>

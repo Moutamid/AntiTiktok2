@@ -67,11 +67,11 @@ public class MotionService extends AccessibilityService {
                         //String[] s = Window.counter.getText().toString().split(" - ");
                         int i = 1;
                         Window.counter.setVisibility(View.VISIBLE);
-//                        if (counter < 5) {
-//                            Window.counter.setVisibility(View.GONE);
-//                        } else {
-//                            Window.counter.setVisibility(View.VISIBLE);
-//                        }
+                        if (counter < 30) {
+                            Window.counter.setVisibility(View.GONE);
+                        } else {
+                            Window.counter.setVisibility(View.VISIBLE);
+                        }
 //                        int count = counter + 1;
                         cen = cen + 0.016f;
                         Log.d(TAG, "onAccessibilityEvent: " + cen);

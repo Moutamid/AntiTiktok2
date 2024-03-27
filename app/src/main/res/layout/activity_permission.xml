@@ -43,9 +43,16 @@
         android:background="@drawable/bg"
         android:backgroundTint="@color/blue"
         android:padding="15dp"
-        android:text="Grant accessibility service permission\nto enhance app accessibility and functionality."
+        android:text="@string/acccessibility"
         android:textSize="16sp"
         app:thumbTint="@color/red" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:text="@string/acccessibility2"
+        android:layout_marginTop="5dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next"
