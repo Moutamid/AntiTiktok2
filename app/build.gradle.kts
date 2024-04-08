@@ -10,8 +10,8 @@ android {
         applicationId = "com.moutamid.antitiktok"
         minSdk = 24
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
         setProperty("archivesBaseName", "LENS-$versionName")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
